@@ -22,6 +22,7 @@ class Item(object):
     def __str__(self):
         result = '<' + self.name + ', ' + str(self.value)\
                  + ', ' + str(self.weight) + '>'
+        return result
 
 
 def max_val(to_consider, avail):
@@ -37,5 +38,32 @@ def max_val(to_consider, avail):
         result = max_val(to_consider[1:], avail)
     else:
         next_item = to_consider[0]
+        with_val, with_to_take = max_val(to_consider[1:],
+                                         avail - next_item.get_weight())
+        with_val += next_item.get_weight()
+        with_out_val, with_out_to_take = max(to_consider[1:], avail)
+
+        # Choose better branch
+        if with_val > with_out_val:
+            result = (with_out_val, with_out_to_take)
 
     return result
+
+
+
+
+def small_test():
+    names = ['a', 'b', 'c', 'd']
+    vals = [6, 7, 8, 9]
+    weights = [3, 3, 2, 5]
+    items = []
+    for i in range(len(vals)):
+        items.append(items(names[i], vals[i], weights[i]))
+    val, taken = max_val(items, 5)
+    for item in taken:
+        print(item)
+    print('Total value of items taken =', val)
+
+
+if __name__ == '__main__':
+    small_test()
