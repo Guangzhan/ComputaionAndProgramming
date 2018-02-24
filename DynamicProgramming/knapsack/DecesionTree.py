@@ -3,6 +3,8 @@
 # The following class was defined in an earlier chapter,
 # and is used here.
 
+import random
+
 
 class Item(object):
     def __init__(self, n, v, w):
@@ -50,16 +52,35 @@ def max_val(to_consider, avail):
     return result
 
 
-
-
 def small_test():
     names = ['a', 'b', 'c', 'd']
     vals = [6, 7, 8, 9]
     weights = [3, 3, 2, 5]
     items = []
     for i in range(len(vals)):
-        items.append(items(names[i], vals[i], weights[i]))
+        items.append(Item(names[i], vals[i], weights[i]))
     val, taken = max_val(items, 5)
+    for item in taken:
+        print(item)
+    print('Total value of items taken =', val)
+
+
+# Page 258, Figure 18.7
+def build_many_items(num_items, max_value, max_weight):
+    items = []
+    for i in range(num_items):
+        items.append(
+            items(
+                str(i), random.randint(
+                    1, max_value), random.randint(
+                    1, max_weight)))
+    return items
+
+
+def big_test(num_items):
+    items = build_many_items(num_items, 10, 10)
+    val, taken = max_val(items, 40)
+    print('Items Taken')
     for item in taken:
         print(item)
     print('Total value of items taken =', val)

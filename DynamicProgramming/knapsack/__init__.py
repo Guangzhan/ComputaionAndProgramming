@@ -101,8 +101,7 @@ def buildManyItems(numItems, maxVal, maxWeight):
 def bigTest(numItems):
     items = buildManyItems(numItems, 10, 10)
     val, taken = maxVal(items, 40)
-    print
-    'Items Taken'
+    print ('Items Taken')
     for item in taken:
         print (item)
     print ('Total value of items taken =', val)
