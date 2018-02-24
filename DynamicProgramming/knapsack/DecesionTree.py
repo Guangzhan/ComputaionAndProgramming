@@ -42,11 +42,13 @@ def max_val(to_consider, avail):
         next_item = to_consider[0]
         with_val, with_to_take = max_val(to_consider[1:],
                                          avail - next_item.get_weight())
-        with_val += next_item.get_weight()
-        with_out_val, with_out_to_take = max(to_consider[1:], avail)
+        with_val += next_item.get_value()
+        with_out_val, with_out_to_take = max_val(to_consider[1:], avail)
 
         # Choose better branch
         if with_val > with_out_val:
+            result = (with_out_val, with_out_to_take + (next_item, ))
+        else:
             result = (with_out_val, with_out_to_take)
 
     return result

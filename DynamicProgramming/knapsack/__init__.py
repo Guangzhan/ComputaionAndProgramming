@@ -101,10 +101,10 @@ def buildManyItems(numItems, maxVal, maxWeight):
 def bigTest(numItems):
     items = buildManyItems(numItems, 10, 10)
     val, taken = maxVal(items, 40)
-    print ('Items Taken')
+    print('Items Taken')
     for item in taken:
-        print (item)
-    print ('Total value of items taken =', val)
+        print(item)
+    print('Total value of items taken =', val)
 
 
 # Page 259, Figure 18.8
@@ -137,6 +137,7 @@ def fastMaxVal(toConsider, avail, memo={}):
             result = (withoutVal, withoutToTake)
     memo[(len(toConsider), avail)] = result
     return result
+
 
 if __name__ == '__main__':
     smallTest()
