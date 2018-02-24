@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ComputaionAndProgramming.iml" filepath="$PROJECT_DIR$/.idea/ComputaionAndProgramming.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../bluedemo/.idea/bluedemo.iml" filepath="$PROJECT_DIR$/../bluedemo/.idea/bluedemo.iml" />
-    </modules>
-  </component>
-</project>
