@@ -34,7 +34,7 @@ def max_val(to_consider, avail):
     :param avail:
     :return:
     """
-    if to_consider == [] and avail == 0:
+    if to_consider == [] or avail == 0:
         result = (0, ())
     elif to_consider[0].get_weight() > avail:
         result = max_val(to_consider[1:], avail)
