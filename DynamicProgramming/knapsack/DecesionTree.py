@@ -70,7 +70,6 @@ def fast_max_val(to_consider, avail, memo={}):
         result = fast_max_val(to_consider[1:], avail, memo)
     else:
         next_item = to_consider[0]
-        
 
     return result
 
