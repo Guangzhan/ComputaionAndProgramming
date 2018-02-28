@@ -54,6 +54,27 @@ def max_val(to_consider, avail):
     return result
 
 
+def fast_max_val(to_consider, avail, memo={}):
+    """
+
+    :param to_consider: goods list
+    :param avail: weight
+    :param memo:
+    :return: tupe, contain best solve of 0/1 bag problem and goods list
+    """
+    if(len(to_consider), avail) in memo:
+        result = memo[(len(to_consider), avail)]
+    elif to_consider == [] or avail == 0:
+        result = (0, ())
+    elif to_consider.get_weight() > avail:
+        result = fast_max_val(to_consider[1:], avail, memo)
+    else:
+        next_item = to_consider[0]
+        
+
+    return result
+
+
 def small_test():
     names = ['a', 'b', 'c', 'd']
     vals = [6, 7, 8, 9]
