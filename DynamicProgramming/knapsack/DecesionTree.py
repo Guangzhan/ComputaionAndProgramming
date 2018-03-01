@@ -70,7 +70,19 @@ def fast_max_val(to_consider, avail, memo={}):
         result = fast_max_val(to_consider[1:], avail, memo)
     else:
         next_item = to_consider[0]
+        # ergodic left
+        with_val, with_to_take = fast_max_val(to_consider[1:], avail - next_item.get_weight(), memo)
+        with_val += next_item.get_value()
 
+        # ergodic right
+        with_out_val, with_out_to_take = fast_max_val(to_consider[1:], avail, memo)
+
+        # choose better
+        if with_val > with_out_val:
+            result = (with_val, with_to_take + (next_item, ))
+        else:
+            result = (with_out_val, with_out_to_take)
+        memo[len(to_consider), avail] = result
     return result
 
 
