@@ -15,3 +15,27 @@ def fib(num):
         return 1
     else:
         return fib(num - 1) + fib(num - 2)
+
+
+# calculate fibnacci sequence with dynamic programing
+def fib_dp(num):
+    fib = {}
+    for k in range(num + 1):
+        if k <= 2:
+            fib[k] = 1
+        else:
+            f = fib[k - 1] + fib[k - 2]
+            fib[k] = f
+    return fib
+
+
+# use memo to solve fibnacci
+def fast_fib(num, memo={}):
+    if num == 0 or num == 1:
+        return 1
+    try:
+        return memo[num]
+    except KeyError:
+        result = fast_fib(num - 1, memo) + fast_fib(num - 2, memo)
+        memo[num] = result
+        return result
