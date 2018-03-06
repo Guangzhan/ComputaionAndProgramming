@@ -5,3 +5,6 @@
 """
 
 
+def lcs():
+    dic = {}
+    return dic
