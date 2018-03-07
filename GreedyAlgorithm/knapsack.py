@@ -27,7 +27,36 @@ class Item(object):
 
 
 def value(item):
-    item.get_value()
+    return item.get_value()
+
+
+def weight_inverse(item):
+    return 1.0 / item.get_value
+
+
+def density(item):
+    return item.get_value / item.get_weight()
+
+
+def greedy(items, max_weight, key_function):
+    """
+
+    :param items:
+    :param max_weight:
+    :param key_function:
+    :return:
+    """
+
+    items_copy = sorted(items, key=key_function, reverse=True)
+    result = []
+    total_value = 0
+    total_weight = 0
+    for i in range(len(items_copy)):
+        if(total_weight + items_copy[i].get_weight()) <= max_weight:
+            result.append(items_copy[i])
+            total_weight += items_copy[i].get_weight()
+            total_value += items_copy[i].get_value()
+    return result, total_value
 
 
 def build_items():
