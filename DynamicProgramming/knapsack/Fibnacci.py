@@ -39,3 +39,12 @@ def fast_fib(num, memo={}):
         result = fast_fib(num - 1, memo) + fast_fib(num - 2, memo)
         memo[num] = result
         return result
+
+
+def small_test():
+    n = 100
+    result = fast_fib(n)
+    print(result)
+
+if __name__ == '__main__':
+    small_test()
