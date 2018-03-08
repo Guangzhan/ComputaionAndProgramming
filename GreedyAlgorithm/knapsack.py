@@ -59,6 +59,23 @@ def greedy(items, max_weight, key_function):
     return result, total_value
 
 
+def test_greedy(items, constraint, key_function):
+    taken, val = greedy(items, constraint, key_function)
+    print('Total value of items taken = ', val)
+    for item in taken:
+        print('   ', item)
+
+
+def test_greedys(max_weight=20):
+    items = build_items()
+    print('Use greedy by value to fill knapsack of size', max_weight)
+    test_greedy(items, max_weight, value)
+    print('\nUse greedy by weight to fill knapsack of size', max_weight)
+    test_greedy(items, max_weight, weight_inverse)
+    print('\nUse greedy by density to fill knapsack of size', max_weight)
+    test_greedy(items, max_weight, density)
+
+
 def build_items():
     names = ['clock', 'painting', 'radio', 'vase', 'book', 'computer']
     vals = [170, 90, 20, 50, 10, 200]
