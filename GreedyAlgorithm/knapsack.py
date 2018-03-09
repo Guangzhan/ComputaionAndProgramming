@@ -22,7 +22,7 @@ class Item(object):
 
     def __str__(self):
         result = '<' + self.name + ', ' + str(self.value) \
-            + ', ' + self.weight + '>'
+            + ', ' + str(self.weight) + '>'
         return result
 
 
@@ -31,11 +31,11 @@ def value(item):
 
 
 def weight_inverse(item):
-    return 1.0 / item.get_value
+    return 1.0 / item.get_value()
 
 
 def density(item):
-    return item.get_value / item.get_weight()
+    return item.get_value() / item.get_weight()
 
 
 def greedy(items, max_weight, key_function):
@@ -84,3 +84,7 @@ def build_items():
     for i in range(len(vals)):
         items.append(Item(names[i], vals[i], weights[i]))
     return items
+
+
+if __name__ == '__main__':
+    test_greedys()
