@@ -47,7 +47,7 @@ def max_val(to_consider, avail):
 
         # Choose better branch
         if with_val > with_out_val:
-            result = (with_out_val, with_out_to_take + (next_item, ))
+            result = (with_val, with_to_take + (next_item, ))
         else:
             result = (with_out_val, with_out_to_take)
 
