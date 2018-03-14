@@ -76,6 +76,30 @@ def test_greedys(max_weight=20):
     test_greedy(items, max_weight, density)
 
 
+def choose_best(pset, max_weight, get_val, get_weight):
+    best_val = 0.0
+    best_set = []
+    for items in pset:
+        items_val = 0.0
+        items_weight = 0.0
+        for item in items:
+            items_val += get_val(item)
+            items_weight += get_weight(item)
+        if items_weight <= max_weight and items_val > best_val:
+            best_val = items_val
+            best_set = items
+    return best_set, best_val
+
+
+def test_best(max_weight=20):
+    items = build_items()
+    pset = []
+    taken, val = choose_best(pset, max_weight, items.get_value(), items.get_weight())
+    print('Total value of items taken = ', val)
+    for item in taken:
+        print(item)
+
+
 def build_items():
     names = ['clock', 'painting', 'radio', 'vase', 'book', 'computer']
     vals = [170, 90, 20, 50, 10, 200]
