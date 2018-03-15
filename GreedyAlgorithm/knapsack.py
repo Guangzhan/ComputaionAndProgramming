@@ -91,10 +91,33 @@ def choose_best(pset, max_weight, get_val, get_weight):
     return best_set, best_val
 
 
+def get_binary_rep(n, num_digits):
+    result = ''
+    while n > 0:
+        result = str(n % 2) + result
+        n /= 2
+    if len(result) > num_digits:
+        raise ValueError('not enough digits')
+    return result
+
+
+def gen_powerset(items):
+    powerset = []
+    for i in range(0, 2**len(items)):
+        bin_str = get_binary_rep(i, len(items))
+        subset = []
+        for j in range(len(items)):
+            if bin_str[j] == '1':
+                subset.append(items[j])
+            powerset.append(subset)
+    return powerset
+
+
 def test_best(max_weight=20):
     items = build_items()
     pset = []
-    taken, val = choose_best(pset, max_weight, items.get_value(), items.get_weight())
+    taken, val = choose_best(
+        pset, max_weight, items.get_value(), items.get_weight())
     print('Total value of items taken = ', val)
     for item in taken:
         print(item)
