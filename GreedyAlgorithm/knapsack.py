@@ -118,8 +118,7 @@ def gen_powerset(items):
 def test_best(max_weight=20):
     items = build_items()
     pset = gen_powerset(items)
-    taken, val = choose_best(
-        pset, max_weight, Item.get_value, Item.get_weight)
+    taken, val = choose_best(pset, max_weight, Item.get_value, Item.get_weight)
     print('Total value of items taken = ', val)
     for item in taken:
         print(item)
