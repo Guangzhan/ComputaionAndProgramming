@@ -95,9 +95,11 @@ def get_binary_rep(n, num_digits):
     result = ''
     while n > 0:
         result = str(n % 2) + result
-        n /= 2
+        n = n // 2
     if len(result) > num_digits:
         raise ValueError('not enough digits')
+    for i in range(num_digits - len(result)):
+        result += '0'
     return result
 
 
@@ -115,9 +117,9 @@ def gen_powerset(items):
 
 def test_best(max_weight=20):
     items = build_items()
-    pset = []
+    pset = gen_powerset(items)
     taken, val = choose_best(
-        pset, max_weight, items.get_value(), items.get_weight())
+        pset, max_weight, Item.get_value, Item.get_weight)
     print('Total value of items taken = ', val)
     for item in taken:
         print(item)
@@ -134,4 +136,7 @@ def build_items():
 
 
 if __name__ == '__main__':
+    
     test_greedys()
+    print("++++++++")
+    test_best()
