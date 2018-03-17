@@ -136,7 +136,7 @@ def build_items():
 
 
 if __name__ == '__main__':
-    
+
     test_greedys()
     print("++++++++")
     test_best()
