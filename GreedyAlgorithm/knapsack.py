@@ -3,7 +3,7 @@
 """
     Knapsack problem solving with Greedy algorithm
 """
-
+import numpy as np
 
 class Item(object):
     def __init__(self, n, v, w):
@@ -131,6 +131,17 @@ def build_items():
     items = []
     for i in range(len(vals)):
         items.append(Item(names[i], vals[i], weights[i]))
+    return items
+
+
+def build_many_items(num_items, max_val, max_weight):
+    items = []
+    for i in range(num_items):
+        items.append(
+            Item(
+                str(i), np.random.randint(
+                    1, max_val), np.random.randint(
+                    1, max_weight)))
     return items
 
 
