@@ -5,6 +5,7 @@
 """
 import numpy as np
 
+
 class Item(object):
     def __init__(self, n, v, w):
         self.name = n
