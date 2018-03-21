@@ -83,7 +83,7 @@ class Graph(Digraph):
     def add_edge(self, edge):
         Digraph.add_node(self, edge)
         rev = Edge(edge.get_destination(), edge.get_source())
-        Digraph.add_edge(self. rev)
+        Digraph.add_edge(self, rev)
 
 
 
