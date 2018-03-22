@@ -34,3 +34,7 @@ def dfs(graph, start, end, path, shortest):
                  if newPath is not None:
                      shortest = newPath
      return shortest
+
+
+def search(graph, start, end):
+    return dfs(graph, start, end, [], None)
