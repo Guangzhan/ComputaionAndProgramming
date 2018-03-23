@@ -47,7 +47,7 @@ class Digraph(object):
 
     def __init__(self):
         self.nodes = []
-        self.edges = []
+        self.edges = {}
 
     def add_node(self, node):
         if node in self.nodes:
@@ -87,6 +87,28 @@ class Graph(Digraph):
 
 
 
+def testSP():
+    nodes = []
+    for name in range(6):
+        nodes.append(Node(str(name)))
+    g = Digraph()
+    for n in nodes:
+        g.add_node(n)
+
+    g.add_edge(Edge(nodes[0], nodes[2]))
+    g.add_edge(Edge(nodes[1], nodes[2]))
+    g.add_edge(Edge(nodes[2], nodes[3]))
+    g.add_edge(Edge(nodes[2], nodes[4]))
+    g.add_edge(Edge(nodes[3], nodes[4]))
+    g.add_edge(Edge(nodes[3], nodes[5]))
+    g.add_edge(Edge(nodes[0], nodes[3]))
+    g.add_edge(Edge(nodes[2], nodes[0]))
+    g.add_edge(Edge(nodes[4], nodes[1]))
+    g.add_edge(Edge(nodes[0], nodes[5]))
+
+
+if __name__ == '__main__':
+    testSP()
 
 
 

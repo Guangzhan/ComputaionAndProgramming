@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 
+
 def printPath(path):
     """
     print shortest path for a graph
@@ -38,3 +39,18 @@ def dfs(graph, start, end, path, shortest):
 
 def search(graph, start, end):
     return dfs(graph, start, end, [], None)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
