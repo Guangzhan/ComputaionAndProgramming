@@ -87,6 +87,10 @@ class Graph(Digraph):
 
 
 
+def search(graph, start, end):
+    return dfs(graph, start, end, [], None)
+
+
 def testSP():
     nodes = []
     for name in range(6):
