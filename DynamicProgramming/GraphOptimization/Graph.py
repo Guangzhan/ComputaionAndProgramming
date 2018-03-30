@@ -50,18 +50,6 @@ class Graph(Digraph):
         Digraph.addEdge(self, rev)
 
 
-def printPath(path):
-    """
-    print shortest path for a graph
-    :param path: graph node list
-    :return: result
-    """
-    result = ''
-    for i in range(len(path)):
-        result += str(i)
-        if i != len(path)-1:
-            result += '->'
-    return result
 
 
 def testSP():
@@ -83,7 +71,7 @@ def testSP():
     g.addEdge(Node.Edge(nodes[3], nodes[1]))
     g.addEdge(Node.Edge(nodes[4], nodes[0]))
     sp = DFS.search(g, nodes[0], nodes[5])
-    print('Shortest path found by DFS:', printPath(sp))
+    print('Shortest path found by DFS:', DFS.printPath(sp))
 
 
 if __name__ == '__main__':

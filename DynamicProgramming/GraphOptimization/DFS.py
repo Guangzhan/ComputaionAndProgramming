@@ -1,6 +1,19 @@
 # -*- coding:utf-8 -*-
 
-from DynamicProgramming.GraphOptimization import Graph
+
+def printPath(path):
+    """
+    print shortest path for a graph
+    :param path: graph node list
+    :return: result
+    """
+    result = ''
+    for i in range(len(path)):
+        result += str(i)
+        if i != len(path)-1:
+            result += '->'
+    return result
+
 
 def dfs(graph, start, end, path, shortest):
      """
@@ -13,7 +26,7 @@ def dfs(graph, start, end, path, shortest):
      :return:
      """
      path += [start]
-     print('Current DFS path:', Graph.printPath(path))
+     print('Current DFS path:', printPath(path))
      if start==end:
          return path
      for node in graph.children(start):
