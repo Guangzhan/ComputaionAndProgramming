@@ -4,7 +4,7 @@ class Node(object):
     def __init__(self, name):
         self.name = name
 
-    def get_name(self):
+    def getName(self):
         return self.name
 
     def __str__(self):
@@ -23,7 +23,7 @@ class Edge(object):
         return self.dest
 
     def __str__(self):
-        return self.src.get_name + '->' + self.dest.get_name()
+        return self.src.getName + '->' + self.dest.getName()
 
 
 class WeightedEdge(object):
@@ -36,5 +36,5 @@ class WeightedEdge(object):
         return self.weight
 
     def __str__(self):
-        return self.src.get_name() + '->(' + str(self.weight) + ')' \
-               + self.dest.get_name()
+        return self.src.getName() + '->(' + str(self.weight) + ')' \
+               + self.dest.getName()

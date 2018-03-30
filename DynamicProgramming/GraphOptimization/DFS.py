@@ -9,7 +9,7 @@ def printPath(path):
     """
     result = ''
     for i in range(len(path)):
-        result += str(i)
+        result += str(path[i])
         if i != len(path)-1:
             result += '->'
     return result
@@ -25,7 +25,7 @@ def dfs(graph, start, end, path, shortest):
      :param shortest:  shortest path
      :return:
      """
-     path += [start]
+     path = path + [start]
      print('Current DFS path:', printPath(path))
      if start==end:
          return path

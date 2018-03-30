@@ -25,8 +25,7 @@ class Digraph(object):
         dest = edge.getDestination()
         if not(src in self.nodes and dest in self.nodes):
             raise ValueError('Node not in graph')
-        else:
-            self.edges[src].append(dest)
+        self.edges[src].append(dest)
 
     def children(self, node):
         return self.edges[node]
@@ -46,10 +45,8 @@ class Digraph(object):
 class Graph(Digraph):
     def addEdge(self, edge):
         Digraph.addNode(self, edge)
-        rev = Node.Edge(edge.get_destination(), edge.get_source())
+        rev = Node.Edge(edge.getDestination(), edge.getSource())
         Digraph.addEdge(self, rev)
-
-
 
 
 def testSP():
@@ -59,7 +56,6 @@ def testSP():
     g = Digraph()
     for n in nodes:
         g.addNode(n)
-
     g.addEdge(Node.Edge(nodes[0], nodes[1]))
     g.addEdge(Node.Edge(nodes[1], nodes[2]))
     g.addEdge(Node.Edge(nodes[2], nodes[3]))
