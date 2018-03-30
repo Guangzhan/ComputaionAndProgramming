@@ -21,8 +21,8 @@ class Digraph(object):
             self.edges[node] = []
 
     def addEdge(self, edge):
-        src = edge.get_source()
-        dest = edge.get_destination()
+        src = edge.getSource()
+        dest = edge.getDestination()
         if not(src in self.nodes and dest in self.nodes):
             raise ValueError('Node not in graph')
         else:
@@ -72,16 +72,16 @@ def testSP():
     for n in nodes:
         g.addNode(n)
 
-    g.addEdge(Node.Edge(nodes[0], nodes[2]))
+    g.addEdge(Node.Edge(nodes[0], nodes[1]))
     g.addEdge(Node.Edge(nodes[1], nodes[2]))
     g.addEdge(Node.Edge(nodes[2], nodes[3]))
     g.addEdge(Node.Edge(nodes[2], nodes[4]))
     g.addEdge(Node.Edge(nodes[3], nodes[4]))
     g.addEdge(Node.Edge(nodes[3], nodes[5]))
-    g.addEdge(Node.Edge(nodes[0], nodes[3]))
-    g.addEdge(Node.Edge(nodes[2], nodes[0]))
-    g.addEdge(Node.Edge(nodes[4], nodes[1]))
-    g.addEdge(Node.Edge(nodes[0], nodes[5]))
+    g.addEdge(Node.Edge(nodes[0], nodes[2]))
+    g.addEdge(Node.Edge(nodes[1], nodes[0]))
+    g.addEdge(Node.Edge(nodes[3], nodes[1]))
+    g.addEdge(Node.Edge(nodes[4], nodes[0]))
     sp = DFS.search(g, nodes[0], nodes[5])
     print('Shortest path found by DFS:', printPath(sp))
 

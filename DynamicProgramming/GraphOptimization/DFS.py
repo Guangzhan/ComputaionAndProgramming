@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
 
+from DynamicProgramming.GraphOptimization import Graph
+
 def dfs(graph, start, end, path, shortest):
      """
 
@@ -11,6 +13,7 @@ def dfs(graph, start, end, path, shortest):
      :return:
      """
      path += [start]
+     print('Current DFS path:', Graph.printPath(path))
      if start==end:
          return path
      for node in graph.children(start):
