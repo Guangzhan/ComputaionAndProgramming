@@ -15,19 +15,6 @@ def printPath(path):
     return result
 
 
-def printPath(path):
-    """
-    print shortest path for a graph
-    :param path: graph node list
-    :return: result
-    """
-    result = ''
-    for i in range(len(path)):
-        result += str(i)
-        if i != len(path)-1:
-            result += '->'
-    return result
-
 
 def dfs(graph, start, end, path, shortest):
      """
