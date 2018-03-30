@@ -16,10 +16,10 @@ class Edge(object):
         self.src = src
         self.dest = dest
 
-    def get_source(self):
+    def getSource(self):
         return self.src
 
-    def get_destination(self):
+    def getDestination(self):
         return self.dest
 
     def __str__(self):
@@ -32,7 +32,7 @@ class WeightedEdge(object):
         self.dest = dest
         self.weight = weight
 
-    def get_weight(self):
+    def getWeight(self):
         return self.weight
 
     def __str__(self):
