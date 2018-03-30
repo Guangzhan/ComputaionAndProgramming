@@ -109,6 +109,8 @@ def testSP():
     g.add_edge(Edge(nodes[2], nodes[0]))
     g.add_edge(Edge(nodes[4], nodes[1]))
     g.add_edge(Edge(nodes[0], nodes[5]))
+    sp = search(g, nodes[0], nodes[5])
+    print('Shortest path found by DFS:', DFS.printPath(sp))
 
 
 if __name__ == '__main__':
