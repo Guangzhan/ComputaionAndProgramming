@@ -4,6 +4,7 @@
 
 from DynamicProgramming.GraphOptimization import DFS
 from DynamicProgramming.GraphOptimization import Node
+from DynamicProgramming.GraphOptimization import BFS
 
 
 
@@ -68,10 +69,13 @@ def testSP():
     g.addEdge(Node.Edge(nodes[4], nodes[0]))
     sp = DFS.search(g, nodes[0], nodes[5])
     print('Shortest path found by DFS:', DFS.printPath(sp))
+    sq = BFS.bfs(g, nodes[0], nodes[5])
+    print('Shortest path found by DFS:', DFS.printPath(sq))
 
 
 if __name__ == '__main__':
     testSP()
+
 
 
 
