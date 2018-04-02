@@ -2,7 +2,7 @@
 
 from DynamicProgramming.GraphOptimization import DFS
 
-def BFS(graph, start, end):
+def bfs(graph, start, end):
     initPath = [start]
     pathQuene = [initPath]
 
@@ -14,6 +14,6 @@ def BFS(graph, start, end):
             return tmpPath
         for nextNode in graph.children(lastNode):
             if nextNode not in tmpPath:
-                newPath = newPath + [nextNode]
+                newPath = tmpPath + [nextNode]
                 pathQuene.append(newPath)
     return None
