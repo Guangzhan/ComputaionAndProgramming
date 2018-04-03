@@ -4,10 +4,10 @@ from DynamicProgramming.GraphOptimization import ShowPath
 
 def bfs(graph, start, end):
     initPath = [start]
-    pathQuene = [initPath]
+    pathQueue = [initPath]
 
-    while len(pathQuene) != 0:
-        tmpPath = pathQuene.pop(0)
+    while len(pathQueue) != 0:
+        tmpPath = pathQueue.pop(0)
         print('Current BFS path:', ShowPath.printPath(tmpPath))
         lastNode = tmpPath[-1]
         if lastNode == end:
@@ -15,5 +15,5 @@ def bfs(graph, start, end):
         for nextNode in graph.children(lastNode):
             if nextNode not in tmpPath:
                 newPath = tmpPath + [nextNode]
-                pathQuene.append(newPath)
+                pathQueue.append(newPath)
     return None
