@@ -1,6 +1,6 @@
 # *-* coding: utf-8 *-*
 
-from DynamicProgramming.GraphOptimization import DFS
+from DynamicProgramming.GraphOptimization import ShowPath
 
 def bfs(graph, start, end):
     initPath = [start]
@@ -8,7 +8,7 @@ def bfs(graph, start, end):
 
     while len(pathQuene) != 0:
         tmpPath = pathQuene.pop(0)
-        print('Current BFS path:', DFS.printPath(tmpPath))
+        print('Current BFS path:', ShowPath.printPath(tmpPath))
         lastNode = tmpPath[-1]
         if lastNode == end:
             return tmpPath
