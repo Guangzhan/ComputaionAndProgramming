@@ -12,4 +12,3 @@ def plotHousing(impression):
         labels.append(label)
         prices.append(float(price) / 1000)
     quarter = pb.arange(len(labels))
-    
