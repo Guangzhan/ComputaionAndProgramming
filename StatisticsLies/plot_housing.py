@@ -31,7 +31,13 @@ def plotHousing(impression):
     else:
         raise ValueError
 
-plotHousing('flat')
-pb.figure()
-plotHousing('volatile')
-pb.figure()
+def main():
+    plotHousing('flat')
+    pb.figure()
+    plotHousing('volatile')
+    pb.figure()
+    plotHousing('fair')
+
+
+if __name__ == '__main__':
+    main()
