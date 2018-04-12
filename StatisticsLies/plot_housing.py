@@ -22,7 +22,14 @@ def plotHousing(impression):
     pb.title('Housing Prices in U.S. Midwest')
     pb.xlabel('Quarter')
     pb.ylabel('Average Price ($1000\'s')
-
+    if impression == 'flat':
+        pb.ylim(10, 10**3)
+    elif impression  == 'volatile':
+        pb.ylim(180, 220)
+    elif impression == 'fair':
+        pb.ylim(150, 250)
+    else:
+        raise ValueError
 
 plotHousing('flat')
 pb.figure()
