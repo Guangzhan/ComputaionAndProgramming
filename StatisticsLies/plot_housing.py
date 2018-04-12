@@ -12,3 +12,19 @@ def plotHousing(impression):
         labels.append(label)
         prices.append(float(price) / 1000)
     quarter = pb.arange(len(labels))
+
+    width = 0.8 #
+    if impression == 'flat':
+        pb.semilogy()
+
+    pb.bar(quarter, prices, width)
+    pb.xticks(quarter + width / 2.0, labels)
+    pb.title('Housing Prices in U.S. Midwest')
+    pb.xlabel('Quarter')
+    pb.ylabel('Average Price ($1000\'s')
+
+
+plotHousing('flat')
+pb.figure()
+plotHousing('volatile')
+pb.figure()
