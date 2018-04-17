@@ -7,9 +7,16 @@ def juneProb(numTrials):
     for trial in range(numTrials):
         june = 0
         for i in range(446):
-            if random.randint([1, 12]) == 6:
+            if random.randint(1, 12) == 6:
                 june += 1
         if june >= 48:
             june48 += 1
     jProb = june48 / float(numTrials)
     print('Probability of at least 48 births in June = ', jProb)
+
+
+def main():
+    juneProb(100)
+
+if __name__ == '__main__':
+    main()
