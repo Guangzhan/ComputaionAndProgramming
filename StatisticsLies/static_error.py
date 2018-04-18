@@ -23,7 +23,7 @@ def anyProb(numTrials):
             months[random.randint(0, 11)] += 1
         if max(months) >= 48:
             anyMonth48 += 1
-     aProb = anyMonth48 / float(numTrials)
+    aProb = anyMonth48 / float(numTrials)
     print('Probability of at least 48 births in June = ', aProb)
 
 
