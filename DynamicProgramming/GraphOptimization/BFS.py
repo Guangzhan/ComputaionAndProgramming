@@ -1,5 +1,4 @@
 # *-* coding: utf-8 *-*
-
 from DynamicProgramming.GraphOptimization import ShowPath
 
 def bfs(graph, start, end):
