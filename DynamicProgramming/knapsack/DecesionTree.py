@@ -122,3 +122,5 @@ def big_test(num_items):
 
 if __name__ == '__main__':
     small_test()
+    # num_items = 100
+    # big_test(num_items)
