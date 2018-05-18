@@ -1,7 +1,7 @@
 # *-* coding: utf-8 *-*
 from DynamicProgramming.GraphOptimization import ShowPath
 
-def bfs(graph, start, end):
+def  bfs(graph, start, end):
     initPath = [start]
     pathQueue = [initPath]
 
