@@ -6,7 +6,6 @@ def get_data(file_name):
     data_file = open(file_name, 'r')
     distances = []
     masses = []
-    discard_header = data_file.readline()
     for line in data_file:
         d, m = line.split()
         distances.append(float(m))
