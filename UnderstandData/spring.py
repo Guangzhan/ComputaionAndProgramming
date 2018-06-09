@@ -24,6 +24,7 @@ def plot_data(input):
     pylab.xlabel('|Force|(Newtons)')
     pylab.ylabel('Distance(meters')
 
+
 def fit_data(input):
     masses, distances = get_data(input)
     masses = pylab.array(masses)
