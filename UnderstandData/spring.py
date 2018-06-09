@@ -23,3 +23,28 @@ def plot_data(input):
     pylab.plot(forces, distances, 'bo', label='Measured displacements')
     pylab.xlabel('|Force|(Newtons)')
     pylab.ylabel('Distance(meters')
+
+def fit_data(input):
+    masses, distances = get_data(input)
+    masses = pylab.array(masses)
+    distances = pylab.array(distances)
+
+    forces = masses * 9.81
+    pylab.plot(forces, distances, 'bo', label='Measured displacements')
+    pylab.xlabel('|Force|(Newtons)')
+    pylab.ylabel('Distance(meters')
+
+    a, b = pylab.polyfit(forces, distances, 1)
+    predict_distances = a * pylab.array(forces) + b
+    k = 1.0 / a
+    pylab.plot(forces, predict_distances, label='Displacement pridicted by \nlinear fit k=' + str(round(k, 5)))
+    pylab.legend(loc='best')
+
+
+
+
+
+
+
+
+
